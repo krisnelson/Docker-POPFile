@@ -29,4 +29,4 @@ ENV	POPFILE_ROOT=/ \
 
 WORKDIR /data
 ENTRYPOINT ["/popfile.pl"]
-CMD ["--set logger_loglevel=0"]
+CMD [""]
