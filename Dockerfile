@@ -15,11 +15,17 @@ RUN	apk update && \
 	wget http://getpopfile.org/downloads/popfile-1.1.3.zip && \
 	unzip popfile-1.1.3.zip && \
 	chmod ug+x popfile.pl
+
 # A data/config/storage volume
 RUN 	mkdir /data
 VOLUME ["/data"]
+
 # Available ports
 EXPOSE 110 8080
+
+# Directories
+ENV	POPFILE_ROOT=/ \
+	POPFILE_USER=/data
 
 WORKDIR /data
 ENTRYPOINT ["/popfile.pl"]
