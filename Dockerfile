@@ -1,5 +1,3 @@
-# LOOK AT chttps://github.com/danielquinn/paperless
-# for next steps on this very initial Dockerfile
 FROM alpine
 LABEL maintainer="Kristopher Nelson <kristopher+docker-popfile@krisnelson.org>"
 
@@ -28,4 +26,4 @@ ENV	POPFILE_ROOT=/ \
 	POPFILE_USER=/data
 
 WORKDIR /data
-CMD ["/popfile.pl", "--set html_local=0"]
+CMD ["/popfile.pl --set html_local=0"]
