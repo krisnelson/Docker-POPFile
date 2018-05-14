@@ -28,5 +28,4 @@ ENV	POPFILE_ROOT=/ \
 	POPFILE_USER=/data
 
 WORKDIR /data
-ENTRYPOINT ["/popfile.pl"]
-CMD [""]
+CMD ["/popfile.pl"]
