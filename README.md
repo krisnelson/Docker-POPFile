@@ -1,10 +1,14 @@
 # Docker-POPFile
-An unofficial docker container for POPFile (on Alpine) 1.1.3 [NOT 
-FUNCTIONAL YET]
+An unofficial docker container for POPFile 1.1.3 [EXPERIMENTAL]
 
-**WARNING:** Right now this just installs the prerequisites for POPFile 
-and then starts POPFile.pl (as root in the container). It does not yet 
-have save a configuration file, save messages, or do anything, really.
+**WARNING:** Still experimental.
+
+## Build with docker
+docker build git@github.com:krisnelson/Docker-POPFile.git --tag popfile
+
+## Run with docker (persist data on local filesystem, interace at port 
+7070)
+docker run -d -p 7070:8080 -v /home/popfile/popfile-data/:/data popfile
 
 ## POPFile
 POPFile automatically sorts your email messages and fights spam. See:
