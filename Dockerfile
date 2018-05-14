@@ -28,4 +28,4 @@ ENV	POPFILE_ROOT=/ \
 	POPFILE_USER=/data
 
 WORKDIR /data
-CMD ["/popfile.pl"]
+CMD ["/popfile.pl", "--set html_local=0"]
