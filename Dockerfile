@@ -26,4 +26,5 @@ ENV	POPFILE_ROOT=/ \
 	POPFILE_USER=/data
 
 WORKDIR /data
-CMD ["/popfile.pl --set html_local=0"]
+ENTRYPOINT ["perl /popfile.pl"]
+CMD ["--set html_local=0"]
