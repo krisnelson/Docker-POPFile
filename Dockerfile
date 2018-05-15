@@ -1,7 +1,12 @@
-FROM alpine
+FROM alpine:latest
 LABEL maintainer="Kristopher Nelson <kristopher+docker-popfile@krisnelson.org>"
 
+# Update base system
 RUN	apk update && \
+	apk upgrade && \
+ 	apk add --no-cache ca-certificates && \
+ 	update-ca-certificates && \
+
 # Install Perl dependencies
 	apk add perl \
 		perl-dbi \
@@ -9,6 +14,7 @@ RUN	apk update && \
 		perl-date-format \
 		perl-html-template \
 		perl-html-tagset && \
+
 # Get source of POPFile
 	wget http://getpopfile.org/downloads/popfile-1.1.3.zip && \
 	unzip popfile-1.1.3.zip && \
