@@ -15,15 +15,15 @@ RUN	apk update && \
 	chmod ug+x popfile.pl
 
 # A data/config/storage volume
-RUN 	mkdir /data
-VOLUME ["/data"]
+RUN 	mkdir /Data
+VOLUME ["/Data"]
 
 # Available ports
 EXPOSE 110 8080
 
 # Directories
 ENV	POPFILE_ROOT=/ \
-	POPFILE_USER=/data
+	POPFILE_USER=/Data
 
 WORKDIR /data
 CMD ["perl", "/popfile.pl", "--set", "html_local=0"]
