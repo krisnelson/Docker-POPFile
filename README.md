@@ -9,7 +9,12 @@ http://getpopfile.org/
 ## Build with docker
 docker build git@github.com:krisnelson/Docker-POPFile.git --tag popfile
 
-## Run with docker (persist data on local filesystem, interface at port 
-7070, POP not exposed)
-docker run -d -p 7070:8080 -v /home/popfile/popfile-data/:/data popfile
+## Run with docker 
+(persist data on local filesystem, interface at port 7070, POP not exposed)
+docker run -d \
+  -p 7070:8080 \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /home/popfile/popfile-data/:/data \
+  --name "popfile" \
+  popfile
 
