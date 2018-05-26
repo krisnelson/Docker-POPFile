@@ -13,6 +13,7 @@ RUN	apk update && \
 		perl-dbd-sqlite \
 		perl-date-format \
 		perl-html-template \
+		perl-io-socket-ssl \
 		perl-html-tagset && \
 
 # Get source of POPFile
